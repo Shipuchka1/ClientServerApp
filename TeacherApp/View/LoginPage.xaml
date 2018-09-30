@@ -1,0 +1,23 @@
+﻿<Page x:Class="TeacherApp.View.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TeacherApp.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="700"
+      Title="LoginPage">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/LoginBackround.jpg"/>
+        </Grid.Background>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <ComboBox FontSize="25" x:Name="TeacherComboBox" Margin="10" Width="350" Height="40">
+                
+            </ComboBox>
+            <PasswordBox Template="{StaticResource PB}" x:Name="LoginPasswordBox" Margin="10"></PasswordBox>
+            <Button Template="{StaticResource ButtonAllTemplate}" Margin="10" x:Name="LoginTeacherButton" Click="LoginTeacherButton_Click" Width="150" Height="30">Login</Button>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,156 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:StudentApp.Resources">
+
+
+    <ControlTemplate x:Key="ButtonAllTemplate"
+                     TargetType="{x:Type Button}">
+
+        <Border CornerRadius="5" x:Name="brd" Background="#6ddfff" BorderBrush="Black" BorderThickness="1">
+            <TextBlock  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"><ContentPresenter RecognizesAccessKey="True"></ContentPresenter></TextBlock>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="brd" Property="Border.Background" Value="#349bd8"></Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="MainPageTemplate"
+                     TargetType="{x:Type Button}">
+
+        <Border CornerRadius="5" x:Name="brd" Background="#cefaff" BorderBrush="Black" BorderThickness="1">
+            <TextBlock  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"><ContentPresenter RecognizesAccessKey="True"></ContentPresenter></TextBlock>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="brd" Property="Border.Background" Value="#349bd8"></Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+
+    </ControlTemplate>
+
+    <!--<ControlTemplate x:Key="TextBoxTemplate"
+                     TargetType="{x:Type TextBoxBase}">
+
+        <Border x:Name="b" BorderBrush="Black" BorderThickness="0,0,0,1">
+            -->
+    <!--<TextBox x:Name="pw" Background="White"  Height="40" Width="200" Margin="10"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"></TextBox>-->
+    <!--
+        </Border>
+        <ControlTemplate.Triggers>
+        <Trigger Property="Focusable" Value="True">
+                <Setter TargetName="b" Property="BorderBrush" Value="#00beff"></Setter>
+                <Setter TargetName="b" Property="BorderThickness" Value="0,0,0,3"></Setter>
+            </Trigger>
+           
+        </ControlTemplate.Triggers>
+    </ControlTemplate>-->
+
+    <Style TargetType="{x:Type TextBox}"
+       x:Key="ExpandingTextBox">
+        <Setter Property="OverridesDefaultStyle"
+            Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+
+                    <!--<TextBox x:Name="tb" BorderBrush="Black" BorderThickness="0,0,0,1" Opacity="0.5">
+                            <TextBox.MaxWidth>
+                                <Binding Path="MaxWidth"
+                                     RelativeSource="{RelativeSource TemplatedParent}" />
+                            </TextBox.MaxWidth>
+                        </TextBox>-->
+                    <Border x:Name="tb" BorderBrush="Black" BorderThickness="0,0,0,1">
+                        <ScrollViewer x:Name="PART_ContentHost"></ScrollViewer>
+                        <!--<ContentControl x:Name="tb"  Opacity="0.5">
+
+                        </ContentControl>-->
+                    </Border>
+                   
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter TargetName="tb" Property="BorderBrush" Value="#02f2ff"></Setter>
+                            <Setter TargetName="tb" Property="BorderThickness" Value="0,0,0,4"></Setter>
+                            <Setter TargetName="tb" Property="Width" Value="200"></Setter>
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+    <ControlTemplate x:Key="PB" TargetType="{x:Type PasswordBox}">
+        <Border x:Name="Border"
+                Margin="20"
+               
+                BorderThickness="0,0,0,1">
+            <Border.Background>
+                <SolidColorBrush Color="White" />
+            </Border.Background>
+            <Border.BorderBrush>
+                <SolidColorBrush Color="Black" />
+            </Border.BorderBrush>
+            <!--<VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Disabled" />
+                        <VisualState x:Name="MouseOver" />
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>-->
+
+            <ScrollViewer x:Name="PART_ContentHost" />
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Border" Property="BorderBrush" Value="#00beff"></Setter>
+                <Setter TargetName="Border" Property="BorderThickness" Value="0,0,0,3"></Setter>
+            </Trigger>
+
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+
+    <!--<ControlTemplate x:Key="TB" TargetType="{x:Type TextBox}">
+        <Border x:Name="Border"
+                Margin="20"
+               
+                BorderThickness="0,0,0,1">
+            <Border.Background>
+                <SolidColorBrush Color="White" />
+            </Border.Background>
+            <Border.BorderBrush>
+                <SolidColorBrush Color="Black" />
+            </Border.BorderBrush>
+            -->
+    <!--<VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Disabled" />
+                        <VisualState x:Name="MouseOver" />
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>-->
+    <!--
+
+            <ScrollViewer x:Name="PART_ContentHost" />
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Border" Property="BorderBrush" Value="#00beff"></Setter>
+                <Setter TargetName="Border" Property="BorderThickness" Value="0,0,0,3"></Setter>
+            </Trigger>
+
+        </ControlTemplate.Triggers>
+    </ControlTemplate>-->
+
+
+
+
+
+
+</ResourceDictionary>

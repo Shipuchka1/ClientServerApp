@@ -1,0 +1,31 @@
+﻿<Page x:Class="StudentApp.View.EmailPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:StudentApp.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="700"
+      Title="EmailPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Label Margin="10" FontSize="15">Введите пароль</Label>
+            <PasswordBox Template="{StaticResource PB}" x:Name="PasswordrEmailPB" Margin="10" Width="200"></PasswordBox>
+            <Button Click="PasswordEmailButton_Click" Template="{StaticResource ButtonAllTemplate}" x:Name="PasswordEmailButton" Height="40" Margin="10" Width="100">Login</Button>
+        </StackPanel>
+        <ListView Grid.Row="1" ItemTemplate="{StaticResource myFirstItemTemplate}"  x:Name="EmailListView" MouseDoubleClick="EmailListView_SelectionChanged">
+            <ListView.Background>
+                <ImageBrush Opacity="0.8" ImageSource="/Images/EmailBg.jpg"/>
+            </ListView.Background>
+
+
+        </ListView>
+        
+    </Grid>
+   
+</Page>

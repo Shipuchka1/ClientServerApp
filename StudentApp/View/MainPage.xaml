@@ -1,0 +1,41 @@
+﻿<Page x:Class="StudentApp.View.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:StudentApp.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="700"
+      Title="MainPage">
+
+    <Grid >
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/MainPs.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListView Background="#cefaff" Grid.Row="0" x:Name="ProblesListView">
+            <ListView.View>
+                <GridView>
+                    
+                    <GridView.Columns>
+                        <GridViewColumn Header="Subject" DisplayMemberBinding="{Binding Path=problem.Subject}"></GridViewColumn>
+                        <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Path=problem.Description}"></GridViewColumn>
+                        <GridViewColumn Header="InputArgs" DisplayMemberBinding="{Binding Path=problem.InputArgs}"></GridViewColumn>
+                        <GridViewColumn Header="OutputArgs" DisplayMemberBinding="{Binding Path=problem.OutputArgs}"></GridViewColumn>
+                        <GridViewColumn Header="Status" DisplayMemberBinding="{Binding Path=state.Status}"></GridViewColumn>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" x:Name="FileNameLabel" Width="600" Margin="10" Height="40"></Label>
+            <Button Template="{StaticResource MainPageTemplate}" Click="GetFileButton_Click" x:Name="GetFileButton" Width="150" Margin="10" Height="40" FontSize="30">File</Button>
+            <Button Template="{StaticResource MainPageTemplate}" Click="SendFileButton_Click" x:Name="SendFileButton" Width="150" Margin="10" Height="40" FontSize="30">Send</Button>
+            <Button Template="{StaticResource MainPageTemplate}" Click="ChatButton_Click" x:Name="ChatButton" Width="150" Margin="10" Height="40" FontSize="30">Chat</Button>
+            <Button Template="{StaticResource MainPageTemplate}" Click="EmailButton_Click" x:Name="EmailButton" Width="150" Margin="10" Height="40" FontSize="30">Email</Button>
+        </StackPanel>
+    </Grid>
+</Page>
